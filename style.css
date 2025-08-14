@@ -294,6 +294,20 @@ img {
     color: var(--color-accent);
 }
 
+/* Style links within the certification list */
+.cert-list li a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.cert-list li a:hover,
+.cert-list li a:focus {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
 /* Contact section */
 .contact-list {
     list-style: none;
@@ -357,6 +371,54 @@ img {
     width: 100%;
     border-radius: 4px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Certifications grid
+   Displays certificate items in a responsive two‑column layout. Each item
+   features a thumbnail image (when available) and a descriptive label.
+*/
+.certificates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.cert-item {
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    overflow: hidden;
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 250px;
+    max-width: 480px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover,
+.cert-item:focus-within {
+    transform: translateY(-4px);
+}
+
+.cert-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cert-item span {
+    display: block;
+    padding: 1rem;
+    color: var(--color-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .cert-item {
+        flex-basis: 100%;
+    }
 }
 
 /* Footer */
