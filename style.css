@@ -408,11 +408,42 @@ img {
 }
 
 .cert-item span {
-    display: block;
+    /*
+     * Use flexbox for certificate captions so that text across
+     * all certificates occupies a consistent height and remains
+     * vertically centred. This prevents long titles (e.g. the
+     * CME challenge) from stretching one card more than others.
+     */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.5rem;
     padding: 1rem;
     color: var(--color-light);
     font-weight: 600;
     font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Remove default underline and blue focus outline on certificate links */
+.cert-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    /* Remove blue outline on keyboard focus */
+}
+
+/* Market and news sections share similar styling */
+.market, .news {
+    background-color: var(--color-muted);
+}
+
+/* Container for embedded widgets like TradingView */
+.market-widget, .news-widget {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 1rem;
 }
 
 @media (max-width: 768px) {
