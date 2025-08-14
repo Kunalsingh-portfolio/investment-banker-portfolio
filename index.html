@@ -213,24 +213,31 @@
         </div>
     </section>
 
-    <!-- Market section with real-time S&P 500 index chart -->
+    <!-- Market section with real-time S&P 500 index chart -->
     <section id="market" class="section market">
         <h2>Market</h2>
         <div class="market-widget">
-            <!-- TradingView mini symbol overview widget using FRED:SP500 to avoid license restrictions -->
+            <!-- TradingView Advanced Chart widget displaying the SPY ETF. Using SPY provides real‑time market data without licensing restrictions on the index. -->
             <div class="tradingview-widget-container">
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                {
-                    "symbol": "FRED:SP500",
-                    "width": "100%",
-                    "height": 400,
-                    "locale": "en",
-                    "dateRange": "12M",
-                    "colorTheme": "dark",
-                    "trendLineColor": "#2962FF",
-                    "underLineColor": "rgba(41, 98, 255, 0.3)",
-                    "isTransparent": false
-                }
+                <div id="tradingview_spy_chart"></div>
+                <!-- TradingView library -->
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                    width: "100%",
+                    height: 450,
+                    symbol: "NYSE:SPY",
+                    interval: "D",
+                    timezone: "America/New_York",
+                    theme: "dark",
+                    style: "1",
+                    locale: "en",
+                    toolbar_bg: "#f1f3f6",
+                    enable_publishing: false,
+                    hide_side_toolbar: false,
+                    allow_symbol_change: true,
+                    container_id: "tradingview_spy_chart"
+                });
                 </script>
             </div>
         </div>
