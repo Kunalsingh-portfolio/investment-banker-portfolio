@@ -318,6 +318,47 @@ img {
     text-decoration: underline;
 }
 
+/* Portfolio & Trading Strategies section */
+.portfolio {
+    background-color: var(--color-muted);
+}
+
+.portfolio-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.portfolio-text {
+    flex: 1 1 300px;
+    min-width: 280px;
+    color: #444;
+}
+
+.portfolio-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.portfolio-text ul {
+    list-style: disc inside;
+    margin-left: 1rem;
+    color: #444;
+}
+
+.portfolio-image {
+    flex: 1 1 300px;
+    min-width: 280px;
+}
+
+.portfolio-image img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Footer */
 footer {
     background-color: var(--color-primary);
